@@ -1710,7 +1710,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Assignment 14: Meta-Analysis in R</h1>
 <h4 class="author">Mary Alldred</h4>
-<h4 class="date">2023/05/04</h4>
+<h4 class="date">Last updated 2024/01/25</h4>
 
 </div>
 
@@ -1932,8 +1932,8 @@ activity today, but a link to the full dataset is available in
 References.</p>
 <p>You can download the data file for today
 <strong>“Alldred2016_MetaAnalysisData.csv”</strong> from the course
-Moodle page. Save the data file to your project folder, and then import
-the data using <code>read.csv()</code>.</p>
+Brightspace page. Save the data file to your project folder, and then
+import the data using <code>read.csv()</code>.</p>
 <pre class="r"><code># Import data
 madata &lt;- read.csv(&quot;Alldred2016_MetaAnalysisData.csv&quot;)
 #Use str() to view structure of data frame
@@ -2315,7 +2315,8 @@ fe_mod &lt;- metacont(Ne,
                    sm = &quot;ROM&quot;,
                    backtransf = T)
 #View results of fixed-effect model
-summary(fe_mod)</code></pre>
+fe_mod_results &lt;- summary(fe_mod)
+fe_mod_results</code></pre>
 <p>The output of our model will include:</p>
 <ul>
 <li>The <strong>individual effect sizes</strong> for each study, a
@@ -2334,7 +2335,7 @@ tau<sup>2</sup> or I<sup>2</sup>, and a Q-test of heterogeneity.</li>
 <p>You can <strong>save the results of the meta-analysis</strong> to
 your working directory as a .txt file using this command:</p>
 <pre class="r"><code>sink(&quot;fe_mod_results.txt&quot;)
-print(fe_mod)
+print(fe_mod_results)
 sink()</code></pre>
 <blockquote>
 <h2 id="challenge-1"><span style="color: red;"> Challenge 1</h2>
@@ -2380,11 +2381,12 @@ your data.</p>
                    method.tau = &quot;ML&quot;,
                    prediction = TRUE,
                    sm = &quot;ROM&quot;)
-summary(re_mod)</code></pre>
+re_mod_results &lt;- summary(re_mod)
+re_mod_results</code></pre>
 <p><strong>Save the results of the meta-analysis</strong> to your
 working directory as a .txt file using this command:</p>
 <pre class="r"><code>sink(&quot;re_mod_results.txt&quot;)
-print(re_mod)
+print(re_mod_results)
 sink()</code></pre>
 <blockquote>
 <h2 id="challenge-2"><span style="color: red;"> Challenge 2</h2>
